@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import LandingPage from '../pages/LandingPage';
 import ReviewPage from '../pages/ReviewPage';
+import Layout from './Layout';
 import { PATH } from '../constants/path';
 
 const Router = () => {
@@ -9,12 +10,17 @@ const Router = () => {
 
   const router = createBrowserRouter([
     {
-      path: LANDING,
-      element: <LandingPage />,
-    },
-    {
-      path: REVIEW,
-      element: <ReviewPage />,
+      element: <Layout />,
+      children: [
+        {
+          path: LANDING,
+          element: <LandingPage />,
+        },
+        {
+          path: REVIEW,
+          element: <ReviewPage />,
+        },
+      ],
     },
   ]);
 
