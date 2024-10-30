@@ -6,12 +6,12 @@ import { PATH } from '../constants/path';
 
 const LandingPage = () => {
   return (
-    <header className="flex min-h-screen flex-col items-center justify-center bg-gray-100">
+    <header className="flex min-h-screen flex-col items-center justify-center">
       <motion.h1
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="mb-4 text-4xl font-bold"
+        className="mb-4 text-3xl font-bold lg:text-4xl"
       >
         자기소개서 첨삭 서비스
       </motion.h1>
@@ -19,9 +19,9 @@ const LandingPage = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5, duration: 0.5 }}
-        className="mb-8 text-xl"
+        className="mb-4 text-lg lg:mb-8 lg:text-xl"
       >
-        AI가 당신의 자기소개서를 개선해드립니다.
+        AI가 당신의 자기소개서를 개선해드려요.
       </motion.p>
 
       <Link to={PATH.REVIEW}>
