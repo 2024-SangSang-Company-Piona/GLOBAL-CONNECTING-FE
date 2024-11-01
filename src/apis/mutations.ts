@@ -7,7 +7,7 @@ export const useReviewMutation = () => {
   const { setReviewedText } = dataStore();
 
   return useMutation({
-    mutationFn: reviewService.mockReview,
+    mutationFn: reviewService.review,
     onSuccess: (data) => {
       setReviewedText(data.reviewedText);
     },
