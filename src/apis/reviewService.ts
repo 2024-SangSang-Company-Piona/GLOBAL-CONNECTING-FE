@@ -3,12 +3,10 @@ import axios from 'axios';
 import { IReviewPayload, IReviewResponse } from '../types/review';
 import { generateReviewText } from '../mocks/mockReview';
 
-const baseURL = import.meta.env.VITE_REVIEW_API;
-
 export const reviewService = {
   review: async (data: IReviewPayload): Promise<IReviewResponse> => {
     const response = await axios.post<IReviewResponse>(
-      `${baseURL}/chat/ask/1`,
+      'https://global-connecting.du.r.appspot.com/chat/ask/1',
       data,
     );
     return response.data;
