@@ -5,10 +5,7 @@ import { generateReviewText } from '../mocks/mockReview';
 
 export const reviewService = {
   review: async (data: IReviewPayload): Promise<IReviewResponse> => {
-    const response = await axios.post<IReviewResponse>(
-      'https://global-connecting.du.r.appspot.com/chat/ask/1',
-      data,
-    );
+    const response = await axios.post<IReviewResponse>('/chat/ask/1', data);
     return response.data;
   },
 
