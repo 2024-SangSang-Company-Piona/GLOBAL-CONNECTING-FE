@@ -1,9 +1,3 @@
 {
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/" },
-    {
-      "source": "/chat/:path*",
-      "destination": "https://global-connecting.du.r.appspot.com/chat/:path*"
-    }
-  ]
+  "rewrites": [{ "source": "/(.*)", "destination": "/" }]
 }
