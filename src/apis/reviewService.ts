@@ -5,16 +5,12 @@ import { generateReviewText } from '../mocks/mockReview';
 
 const baseURL = import.meta.env.VITE_REVIEW_API;
 
-const api = axios.create({
-  baseURL,
-  headers: {
-    'Content-Type': 'application/json',
-  },
-});
-
 export const reviewService = {
   review: async (data: IReviewPayload): Promise<IReviewResponse> => {
-    const response = await api.post<IReviewResponse>('/chat/ask/1', data);
+    const response = await axios.post<IReviewResponse>(
+      `${baseURL}/chat/ask/1`,
+      data,
+    );
     return response.data;
   },
 
